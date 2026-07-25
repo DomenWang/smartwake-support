@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="接受 SmartWake 好友邀请">
+  <title>SmartWake 好友邀请</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><img src="smartwake-crystal-icon.png" alt=""></span>SmartWake 智能闹钟</a>
+      <nav aria-label="主要导航">
+        <a href="support.html">技术支持</a>
+        <a href="privacy.html">隐私政策</a>
+        <a href="terms.html">用户协议</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <h1>打开 SmartWake 接受邀请</h1>
+          <p class="lead">如果 SmartWake 没有自动打开，请点击下方按钮；尚未安装时可前往 App Store。</p>
+          <div class="actions">
+            <a class="button primary" id="open-app" href="weatherwake://invite">打开 SmartWake</a>
+            <a class="button" href="https://apps.apple.com/app/id6788850214">前往 App Store</a>
+          </div>
+        </div>
+        <div class="alarm" role="img" aria-label="SmartWake 水晶闹钟图标"></div>
+      </section>
+    </main>
+    <footer><span>© 2026 SmartWake. 保留所有权利。</span><span><a href="privacy.html">隐私</a> · <a href="terms.html">协议</a> · <a href="support.html">支持</a></span></footer>
+  </div>
+  <script>
+    const ref = new URLSearchParams(window.location.search).get("ref");
+    const destination = ref ? `weatherwake://invite?ref=${encodeURIComponent(ref)}` : "weatherwake://invite";
+    document.getElementById("open-app").href = destination;
+    if (ref) window.location.href = destination;
+  </script>
+</body>
+</html>
