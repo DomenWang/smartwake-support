@@ -82,6 +82,21 @@ nav a {
   text-decoration: none;
 }
 
+.language-picker select {
+  min-height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 28px 4px 12px;
+  background: var(--surface-strong);
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+}
+
+html[dir="rtl"] .language-picker select {
+  padding: 4px 12px 4px 28px;
+}
+
 main { padding: 54px 0 80px; }
 
 .hero {
