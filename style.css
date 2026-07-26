@@ -107,6 +107,63 @@ main { padding: 54px 0 80px; }
   min-height: 520px;
 }
 
+.demo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 380px);
+  align-items: center;
+  gap: 64px;
+  margin: 16px 0 72px;
+  padding: 48px;
+  border: 1px solid var(--line);
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(82, 234, 210, .2), transparent 18rem),
+    var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.demo-copy {
+  max-width: 560px;
+}
+
+.demo-copy h2 {
+  margin: 0 0 18px;
+  font-size: clamp(28px, 4vw, 48px);
+}
+
+.demo-copy p:last-child {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent-dark);
+  font-size: 13px;
+  font-weight: 760;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.demo-device {
+  width: min(100%, 340px);
+  justify-self: center;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, .9);
+  border-radius: 36px;
+  background: rgba(255, 255, 255, .82);
+  box-shadow: 0 24px 60px rgba(21, 113, 120, .2);
+}
+
+.demo-device video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 27px;
+  background: #d9f4ed;
+  object-fit: cover;
+}
+
 h1, h2, h3 {
   margin: 0;
   line-height: 1.18;
@@ -251,6 +308,7 @@ footer {
 @media (max-width: 760px) {
   header, footer { align-items: flex-start; flex-direction: column; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
+  .demo { grid-template-columns: 1fr; gap: 30px; padding: 28px 20px; }
   .alarm { min-height: 300px; margin: 20px 20px 0; }
   .features { grid-template-columns: 1fr; }
   .policy-hero { grid-template-columns: 1fr; }
