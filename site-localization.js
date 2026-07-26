@@ -66,6 +66,10 @@ async function smartWakeApplyLanguage(language) {
   document.documentElement.lang = language;
   document.documentElement.dir = language === "ug" ? "rtl" : "ltr";
   document.title = translations[document.title] || document.title;
+  document.querySelectorAll('meta[name="description"]').forEach((element) => {
+    const value = element.getAttribute("content");
+    if (translations[value]) element.setAttribute("content", translations[value]);
+  });
   smartWakeReplaceText(document.body, translations);
   document.querySelectorAll("[aria-label]").forEach((element) => {
     const value = element.getAttribute("aria-label");
