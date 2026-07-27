@@ -9,6 +9,9 @@ const smartWakeLanguages = {
   ja: "日本語",
   ar: "العربية",
   it: "Italiano",
+  "ko-KP": "조선어",
+  ko: "한국어",
+  th: "ไทย",
 };
 
 const smartWakeRegionFallbacks = {
@@ -21,6 +24,9 @@ const smartWakeRegionFallbacks = {
   RU: "ru", BY: "ru", KZ: "ru", KG: "ru",
   JP: "ja",
   IT: "it", SM: "it", VA: "it",
+  KP: "ko-KP",
+  KR: "ko",
+  TH: "th",
   SA: "ar", AE: "ar", EG: "ar", IQ: "ar", JO: "ar", KW: "ar", LB: "ar",
   OM: "ar", QA: "ar", BH: "ar", YE: "ar", SY: "ar", PS: "ar", MA: "ar",
   DZ: "ar", TN: "ar", LY: "ar", SD: "ar", SO: "ar", MR: "ar", DJ: "ar",
