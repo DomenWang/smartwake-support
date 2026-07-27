@@ -6,6 +6,9 @@ const smartWakeLanguages = {
   de: "Deutsch",
   ru: "Русский",
   ug: "ئۇيغۇرچە",
+  ja: "日本語",
+  ar: "العربية",
+  it: "Italiano",
 };
 
 const smartWakeRegionFallbacks = {
@@ -16,6 +19,12 @@ const smartWakeRegionFallbacks = {
   FR: "fr", BE: "fr", MC: "fr", LU: "fr", SN: "fr", CI: "fr", CM: "fr",
   DE: "de", AT: "de", CH: "de", LI: "de",
   RU: "ru", BY: "ru", KZ: "ru", KG: "ru",
+  JP: "ja",
+  IT: "it", SM: "it", VA: "it",
+  SA: "ar", AE: "ar", EG: "ar", IQ: "ar", JO: "ar", KW: "ar", LB: "ar",
+  OM: "ar", QA: "ar", BH: "ar", YE: "ar", SY: "ar", PS: "ar", MA: "ar",
+  DZ: "ar", TN: "ar", LY: "ar", SD: "ar", SO: "ar", MR: "ar", DJ: "ar",
+  KM: "ar",
 };
 
 function smartWakeSupportedLanguage(identifier) {
@@ -64,7 +73,7 @@ async function smartWakeApplyLanguage(language) {
   const translations = allTranslations[language] || allTranslations.en;
 
   document.documentElement.lang = language;
-  document.documentElement.dir = language === "ug" ? "rtl" : "ltr";
+  document.documentElement.dir = ["ug", "ar"].includes(language) ? "rtl" : "ltr";
   document.title = translations[document.title] || document.title;
   document.querySelectorAll('meta[name="description"]').forEach((element) => {
     const value = element.getAttribute("content");
